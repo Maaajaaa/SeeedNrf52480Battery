@@ -16,9 +16,9 @@ SeeedNrf52480Battery::SeeedNrf52480Battery(bool disableVoltageReading, bool useP
         this->updateADCReading();
     }
 
-    pinMode(PIN_BATTERY_CURRENT_PIN, OUTPUT);
+    //pinMode(PIN_BATTERY_CURRENT_PIN, OUTPUT);
     pinMode(PIN_CHARGING_INV, INPUT);
-    this->setChargeCurrent50mA();
+    //this->setChargeCurrent50mA();
 }
 
 
@@ -56,12 +56,13 @@ void SeeedNrf52480Battery::disableVoltageReading()
 
 /// @brief set the maximum battery charge current to 100mA
 void SeeedNrf52480Battery::setChargeCurrent100mA(){
+    pinMode(PIN_BATTERY_CURRENT_PIN, OUTPUT);
     digitalWrite(PIN_BATTERY_CURRENT_PIN, LOW);
 }
 
 /// @brief set the maximum battery charge current to 50mA
 void SeeedNrf52480Battery::setChargeCurrent50mA(){
-    digitalWrite(PIN_BATTERY_CURRENT_PIN, HIGH);
+    pinMode(PIN_BATTERY_CURRENT_PIN, INPUT);
 }
 
 
