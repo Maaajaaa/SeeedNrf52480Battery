@@ -36,7 +36,7 @@ class SeeedNrf52480Battery {
         void disableVoltageReading();
         //battery performance
         //according to the texas instruments BQ25100 documentation 4.2V is the maximum charge voltage
-        const float maxVoltage = 4.2;
+        float maxVoltage = 4.2;
         //3.2V is just a reasonable discharged voltage for Lithium-(X) cells
         float minVoltage = 3.2;
 
